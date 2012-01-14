@@ -1,0 +1,23 @@
+! ----------------------------------------------------------------------------
+! file:     ~/.Xdefaults
+! ----------------------------------------------------------------------------
+
+*color1:		#e52222
+*color2:		#a6e32d
+*color3:		#fc951e
+*color4:		#c48dff
+!*color5:		#fa2573
+*color6:		#67d9f0
+*color9:		#e52222
+*color10:		#a6e32d
+*color11:		#fc951e
+!*color12:		#c48dff
+*color13:		#fa2573
+*color14:		#67d9f0
+xterm*termName:		xterm-256color
+xterm*faceName:     terminusmod:pixelsize=12
+xterm*background:   #121212
+xterm*foreground:   #F3F3F3
+xterm*cursorColor:	#F3F3F3
+xterm*scrollBar:    false
+xterm*saveLines:    1000

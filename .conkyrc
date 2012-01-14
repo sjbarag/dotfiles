@@ -1,0 +1,16 @@
+background no
+out_to_console yes
+update_interval 1
+total_run_times 0
+use_spacer none
+out_to_x no
+#alignment right
+
+TEXT
+${if_mpd_playing}\
+${mpd_artist}: ${mpd_title}\
+${endif}  \
+í${execi 1 /home/sean/.conky/vol.sh}  \
+ï${wireless_essid wlan0}: ${wireless_link_qual_perc wlan0}  \
+Î${battery_short}  \
+ù${time %F %I:%M}
