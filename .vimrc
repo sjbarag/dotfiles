@@ -2,7 +2,7 @@ set number
 set shiftwidth=4
 set laststatus=2
 set ts=4
-set autoindent
+"set autoindent
 
 set showmatch
 set matchtime=1
