@@ -65,7 +65,9 @@ autocmd FileType tex
 " enable spell checking for .txt files
 " NOTE: since vim doesn't have a filetype for .txt, this recognizes .txt extensions
 autocmd BufNewFile,BufRead *.txt setlocal spell
+autocmd BufNewFile,BufRead *.tex setlocal filetype=tex
 
+set guifont=Terminus\ 8
 set t_Co=256
 color molokai-black
 syntax on
