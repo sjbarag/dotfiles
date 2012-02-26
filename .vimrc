@@ -33,6 +33,10 @@ nnoremap <silent> j gj
 inoremap <silent> <Up>   <Esc>gka
 inoremap <silent> <Down> <Esc>gja
 
+" hardcopy!
+set printfont=terminus
+set printoptions=paper:letter,right:36pt,left:36pt,number:y,wrap:y " 36pt = .5in
+
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
