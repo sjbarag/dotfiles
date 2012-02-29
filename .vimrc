@@ -33,6 +33,16 @@ nnoremap <silent> j gj
 inoremap <silent> <Up>   <Esc>gka
 inoremap <silent> <Down> <Esc>gja
 
+" Better split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" make Y behave like the other capitals
+map Y y$
+
+
 " hardcopy!
 set printfont=terminus
 set printoptions=paper:letter,right:36pt,left:36pt,number:y,wrap:y " 36pt = .5in
