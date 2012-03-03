@@ -76,6 +76,7 @@ autocmd FileType tex
 " NOTE: since vim doesn't have a filetype for .txt, this recognizes .txt extensions
 autocmd BufNewFile,BufRead *.txt setlocal spell
 autocmd BufNewFile,BufRead *.tex setlocal filetype=tex
+autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
 set guifont=Terminus\ 8
 set t_Co=256
