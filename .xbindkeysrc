@@ -1,0 +1,9 @@
+# Audio keys!
+"ncmpcpp toggle"
+XF86AudioPlay
+
+"ncmpcpp prev"
+XF86AudioPrev
+
+"ncmpcpp next"
+XF86AudioNext
