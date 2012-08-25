@@ -2,6 +2,7 @@ set number
 set shiftwidth=4
 set laststatus=2
 set ts=4
+set colorcolumn=81
 "set autoindent
 
 set showmatch
