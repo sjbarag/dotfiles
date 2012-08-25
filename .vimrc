@@ -79,7 +79,18 @@ autocmd BufNewFile,BufRead *.txt setlocal spell
 autocmd BufNewFile,BufRead *.tex setlocal filetype=tex
 autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
-set guifont=Terminus\ 8
-set t_Co=256
-color molokai-black
+" for pathogen!
+call pathogen#infect()
 syntax on
+filetype plugin indent on
+
+" powerline!
+"let g:Powerline_symbols = 'fancy'
+
+set guifont=Terminus\ 8
+
+" only use 256 colors on xterm; otherwise use a different colorscheme
+if $COLORTERM == 'xterm-256color'
+	set t_Co=256
+endif
+color molokai
