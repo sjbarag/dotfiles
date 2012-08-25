@@ -6,7 +6,7 @@ setxkbmap -option ctrl:nocaps
 xset -r 173 -r 172 -r 171
 
 # map to mpd controls
-xbindkeys
+xbindkeys -f ~/dotfiles/.xbindkeysrc
 
 #fix window manager name so Java recognizes it
 wmname LG3D
