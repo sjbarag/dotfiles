@@ -1,24 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-
-#use extended color pallete if available
-if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
-    turquoise="%F{81}"
-    orange="%F{166}"
-    purple="%F{135}"
-    hotpink="%F{161}"
-    limegreen="%F{118}"
-else
-    turquoise="$fg[cyan]"
-    orange="$fg[yellow]"
-    purple="$fg[magenta]"
-    hotpink="$fg[red]"
-    limegreen="$fg[green]"
-fi
-autoload colors; colors;
-[[ -z "$LSCOLORS" ]] && export LSCOLORS="Gxfxcxdxbxegedabagacad"
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
