@@ -10,7 +10,5 @@ TEXT
 ${if_mpd_playing}\
 ${mpd_artist}: ${mpd_title}\
 ${endif}  \
-í${execi 1 /home/sean/.conky/vol.sh}  \
 ï${wireless_essid wlan0}: ${wireless_link_qual_perc wlan0}  \
-Î${battery_short}  \
 ù${time %F %I:%M}

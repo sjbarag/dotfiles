@@ -3,7 +3,7 @@ setxkbmap -option ctrl:nocaps
 
 # disable autorepeat for multimedia keys
 #       prev   play   next
-xset -r 173 -r 172 -r 171
+#xset -r 173 -r 172 -r 171
 
 # map to mpd controls
 xbindkeys -f ~/dotfiles/.xbindkeysrc
@@ -15,9 +15,11 @@ wmname LG3D
 #dropboxd &
 
 # start mpd
-mpd ~/.mpd/mpd.conf
+#mpd ~/.mpd/mpd.conf
+
+offlineimap -l ~/.offlineimap/log
 
 # dwm bar
-sudo conky -c /home/sean/.conkyrc | while read -r; do xsetroot -name "$REPLY"; done &
+#sudo conky -c /home/sean/.conkyrc | while read -r; do xsetroot -name "$REPLY"; done &
 #exec twm
 exec dwm

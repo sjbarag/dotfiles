@@ -27,7 +27,7 @@ ZSH_THEME="gallifrey-mod"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-export PATH=${PATH}:/home/sean/bin
+export PATH=${PATH}:/home/sean/bin:/opt/android/tools:/opt/android/platform-tools:/usr/local/texlive/2012/bin/x86_64-linux:/opt/psychonauts
 export EDITOR=vim
 
 # Customize to your needs...
