@@ -27,7 +27,7 @@ ZSH_THEME="gallifrey-mod"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-export PATH=${PATH}:/home/sean/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
 export EDITOR=vim
 
 # Customize to your needs...
