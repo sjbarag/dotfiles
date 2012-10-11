@@ -37,7 +37,7 @@
 *.color15: #d4d4d4
 
 xterm*termName:		xterm-256color
-xterm*Font:         -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
+xterm*Font:         -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
 xterm*boldFont:     -*-terminusmod-bold-r-normal-*-12-*-*-*-*-*-*-*
 xterm*background:   #121212
 xterm*foreground:   #F3F3F3
