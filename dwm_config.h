@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-terminusmod,icons-*-r-normal-*-12-*-*-*-*-*-*-*";
+static const char font[]            = "-*-terminusmodx.icons-medium-r-*-*-12-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#262729";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#cccccc";
