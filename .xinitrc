@@ -13,7 +13,7 @@ xbindkeys -f ~/dotfiles/.xbindkeysrc
 wmname LG3D
 
 # start mpd
-mpd ~/.mpd/mpd.conf
+#mpd ~/.mpd/mpd.conf
 
 # dwm bar
 sudo conky -c /home/sean/.conkyrc | while read -r; do xsetroot -name "$REPLY"; done &
