@@ -16,6 +16,7 @@ wmname LG3D
 #mpd ~/.mpd/mpd.conf
 
 # dwm bar
-sudo conky -c /home/sean/.conkyrc | while read -r; do xsetroot -name "$REPLY"; done &
-#exec twm
+# kill old conkys first
+pkill conky
+conky | while read -r; do xsetroot -name "$REPLY"; done &
 exec dwm
