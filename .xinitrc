@@ -12,9 +12,6 @@ xbindkeys -f ~/dotfiles/.xbindkeysrc
 #fix window manager name so Java recognizes it
 wmname LG3D
 
-# dropbox daemon
-#dropboxd &
-
 # start mpd
 mpd ~/.mpd/mpd.conf
 
