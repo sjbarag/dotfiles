@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-artwiz-cureextra-medium-*-*-*-*-*-*-*-*-*-*-*";
+static const char font[]            = "-*-terminusmodx.icons-medium-r-*-*-12-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#262729";
 static const char normbgcolor[]     = "#000000";
 static const char normfgcolor[]     = "#cccccc";
@@ -28,9 +28,9 @@ static const Bool resizehints = True; /* True means respect size hints in tiled 
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "½",      tile        }, // []=  first entry is default
-	{ "¾",      NULL        }, // <><  no layout function means floating behavior
-	{ "¼",      monocle     }, // [M]
+	{ "þ",      tile        }, // []=  first entry is default
+	{ "ý",      NULL        }, // <><  no layout function means floating behavior
+	{ "ÿ",      monocle     }, // [M]
 };
 
 /* key definitions */
