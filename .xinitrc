@@ -1,3 +1,4 @@
+#!/bin/bash
 # Remap Caps Lock to Control
 setxkbmap -option ctrl:nocaps
 
