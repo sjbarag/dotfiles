@@ -4,11 +4,13 @@ background no
 update_interval 1
 total_run_times 0
 use_spacer none
+use_spacer right
+mail_spool /home/sean/Mail/inbox
 
 TEXT
 ${if_mpd_playing}\
-${mpd_artist}: ${mpd_title}\
-${endif}  \
-¤ ${wireless_essid wlan0}: ${wireless_link_qual_perc wlan0}  \
-ð ${battery_short}  \
+ê ${mpd_artist}: ${mpd_title}  \
+${endif}\
+${if_match "${new_mails /home/sean/Mail/inbox}" > "0"}Ì ${new_mails /home/sean/Mail/inbox}  ${endif}\
+¤ ${wireless_essid ra0}: ${wireless_link_qual_perc ra0}\
 É ${time %F %I:%M}
