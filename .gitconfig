@@ -7,3 +7,5 @@
 [user]
 	email = sjbarag@gmail.com
 	name = Sean Barag
+[push]
+	default = simple
