@@ -1,3 +1,4 @@
+" Plugins {{{
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
@@ -11,9 +12,16 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'freeo/vim-kalisi'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript'
+Plug 'liuchengxu/space-vim-dark'
 call plug#end()
 
-set number
+" enable deoplete for autocompletion
+let g:deoplete#enable_at_startup = 1
+"}}}
+
+" Tabs, spaces, et. al. {{{
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -21,31 +29,49 @@ set softtabstop=4
 set showmatch
 set matchtime=1
 
-set ignorecase
-set smartcase " case-insensitive search (except when capitals are present)
-set incsearch
+" show tabs and spaces
+set list
+set listchars=tab:·\ ,trail:· " show trailing
+" }}}
+
+" Line and column display {{{
+" show line numbers
+set number
 
 " Highlight current line
 set cursorline
 
-" show tabs and spaces
-set list
-set listchars=tab:·\ ,trail:· " show trailing
+" add some rulers
+set textwidth=120
+set colorcolumn=-20,+0
+" }}}
+
+" Search & motions {{{
+set ignorecase
+set smartcase " case-insensitive search (except when capitals are present)
+set incsearch
 
 " make Y behave like the other capitals
 map Y y$
 
 " disable mouse support.  It's sort of annoying in neovim + gnome-terminal
 set mouse=
+" }}}
 
-" enable deoplete for autocompletion
-let g:deoplete#enable_at_startup = 1
-
+" Styling {{{
 " use true colors in terminal
 set termguicolors
 
-" default to a dark background
-set background=dark
-
 " use a good colorscheme
-colorscheme kalisi
+colorscheme space-vim-dark
+
+" also use a good lightline theme to match
+let g:lightline = {
+  \ 'colorscheme': 'one',
+\ }
+
+" make comments italic
+highlight Comment cterm=italic
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
