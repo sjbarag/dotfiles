@@ -15,6 +15,7 @@ Plug 'freeo/vim-kalisi'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript'
 Plug 'liuchengxu/space-vim-dark'
+Plug 'othree/yajs.vim'
 call plug#end()
 
 " enable deoplete for autocompletion
@@ -53,6 +54,9 @@ set incsearch
 
 " make Y behave like the other capitals
 map Y y$
+
+" make C-c behave like <esc> to avoid breaking plugins
+inoremap <C-c>  <Esc>
 
 " disable mouse support.  It's sort of annoying in neovim + gnome-terminal
 set mouse=
