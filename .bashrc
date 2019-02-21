@@ -16,7 +16,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
+HISTSIZE=10000
 HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
@@ -88,39 +88,58 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+[ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
 
 # ensure --user-install'd gems are in PATH
 if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
+    PATH="$PATH:$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
 fi
 
-# ensure `pip install`'d packages are in PATH
-if which pip >/dev/null; then
-    PATH="$PATH:~/.local/bin"
-fi
+PATH="$PATH:$HOME/Library/Python/3.7/bin"
+PATH="$PATH:$HOME/Library/Python/2.7/bin"
+
+# add Android SDK
+asdk="$HOME/Library/Android/sdk"
+PATH="$asdk/tools/bin:$asdk/platform-tools:$asdk/tools:$PATH"
+
+# add cargo/rust/rustup
+PATH="$HOME/.cargo/bin:$PATH"
+
+# set a GOPATH for go dependencies & binaries to go to
+export GOPATH="$HOME/src/go"
+
+# and add golang binaries to PATH
+PATH="$PATH:$(go env GOPATH)/bin"
+
+# Add n (for nodejs version management)
+export N_PREFIX="$HOME/.local"
+PATH="$HOME/.local/bin:$PATH"
+
+# Add virtualenvwrapper functions to PATH
+source $HOME/Library/Python/3.6/bin/virtualenvwrapper.sh
 
 # ensure JetBrains products can launch
-export JAVA_HOME='/usr/lib/jvm/java-8-oracle/'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home'
 
 # use NeoVim as much as possible
 export EDITOR=nvim
 
 # chruby seems simpler than rvm
-source /usr/local/share/chruby/chruby.sh
+#source /usr/local/share/chruby/chruby.sh
 
 # work stuff!
 source ~/.config/bash/work.sh
+
+# let me cd to things in ~/src/ *magically*
+export CDPATH=~/src/
 
 PS1="
 \D{%F %I:%M:%S} \u in \w
 └╴ ($?) $ "
 
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

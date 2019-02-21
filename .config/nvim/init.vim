@@ -6,16 +6,23 @@ endfunction
 call plug#begin('~/.config/nvim/plugged')
 Plug 'kchmck/vim-coffee-script'
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/echodoc.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tomasr/molokai'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'freeo/vim-kalisi'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript'
-Plug 'liuchengxu/space-vim-dark'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'othree/yajs.vim'
+Plug 'tpope/vim-surround'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'chooh/brightscript.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'freeo/vim-kalisi'
+Plug 'morhetz/gruvbox'
+Plug 'junegunn/goyo.vim'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 " enable deoplete for autocompletion
@@ -66,13 +73,19 @@ set mouse=
 " use true colors in terminal
 set termguicolors
 
-" use a good colorscheme
-colorscheme space-vim-dark
+" use a good lightline theme to match the color scheme
+" let g:lightline = {
+"   \ 'colorscheme': 'nord',
+" \ }
 
-" also use a good lightline theme to match
-let g:lightline = {
-  \ 'colorscheme': 'one',
-\ }
+" nord's default comments are way too light - brighten them up a bit
+" let g:nord_comment_brightness = 12
+
+" use a dark color for ayu
+let ayucolor="dark"
+
+" use a good colorscheme
+colorscheme ayu
 
 " make comments italic
 highlight Comment cterm=italic
