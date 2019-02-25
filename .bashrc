@@ -88,6 +88,7 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ] && source $(brew --prefix)/etc/profile.d/bash_completion.sh
 
 # ensure --user-install'd gems are in PATH
