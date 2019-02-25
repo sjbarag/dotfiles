@@ -88,7 +88,7 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-[ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
+[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ] && source $(brew --prefix)/etc/profile.d/bash_completion.sh
 
 # ensure --user-install'd gems are in PATH
 if which ruby >/dev/null && which gem >/dev/null; then
@@ -112,11 +112,11 @@ export GOPATH="$HOME/src/go"
 PATH="$PATH:$(go env GOPATH)/bin"
 
 # Add n (for nodejs version management)
-export N_PREFIX="$HOME/.local"
-PATH="$HOME/.local/bin:$PATH"
+export N_PREFIX="$HOME/.local/share/n"
+PATH="${N_PREFIX}/bin:$PATH"
 
 # Add virtualenvwrapper functions to PATH
-source $HOME/Library/Python/3.6/bin/virtualenvwrapper.sh
+source $HOME/Library/Python/3.7/bin/virtualenvwrapper.sh
 
 # ensure JetBrains products can launch
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home'
