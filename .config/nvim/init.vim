@@ -62,6 +62,9 @@ set incsearch
 " make Y behave like the other capitals
 map Y y$
 
+" unify system and vim pasteboards
+set clipboard+=unnamed
+
 " make C-c behave like <esc> to avoid breaking plugins
 inoremap <C-c>  <Esc>
 
