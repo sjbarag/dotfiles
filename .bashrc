@@ -134,13 +134,11 @@ source ~/.config/bash/work.sh
 # let me cd to things in ~/src/ *magically*
 export CDPATH=~/src/
 
-PS1="
-\D{%F %I:%M:%S} \u in \w
-└╴ ($?) $ "
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# Add yarn and yarn-installed binaries to PATH
+PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH
+
+source ~/.config/bash/prompt.sh
