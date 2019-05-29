@@ -13,16 +13,19 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'mhartington/nvim-typescript', {'do': './install.sh' }
 Plug 'othree/yajs.vim'
 Plug 'tpope/vim-surround'
 Plug 'liuchengxu/space-vim-dark'
-Plug 'chooh/brightscript.vim'
+Plug 'sjbarag/brightscript.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'freeo/vim-kalisi'
-Plug 'morhetz/gruvbox'
 Plug 'junegunn/goyo.vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'jan-warchol/selenized', { 'rtp': 'vim/' }
+Plug 'srcery-colors/srcery-vim'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " enable deoplete for autocompletion
@@ -77,18 +80,17 @@ set mouse=
 set termguicolors
 
 " use a good lightline theme to match the color scheme
-" let g:lightline = {
-"   \ 'colorscheme': 'nord',
-" \ }
+let g:lightline = { 'colorscheme': 'srcery' }
 
 " nord's default comments are way too light - brighten them up a bit
 " let g:nord_comment_brightness = 12
 
 " use a dark color for ayu
-let ayucolor="dark"
+" let ayucolor="dark"
 
 " use a good colorscheme
-colorscheme ayu
+set background=dark
+colorscheme srcery
 
 " make comments italic
 highlight Comment cterm=italic
