@@ -117,6 +117,7 @@ export N_PREFIX="$HOME/.local/share/n"
 PATH="${N_PREFIX}/bin:$PATH"
 
 # Add virtualenvwrapper functions to PATH
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source $HOME/Library/Python/3.7/bin/virtualenvwrapper.sh
 
 # ensure JetBrains products can launch
@@ -132,7 +133,7 @@ export EDITOR=nvim
 source ~/.config/bash/work.sh
 
 # let me cd to things in ~/src/ *magically*
-export CDPATH=~/src/
+export CDPATH="${HOME}/src/"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -141,4 +142,6 @@ PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export PATH
 
-source ~/.config/bash/prompt.sh
+eval "$(starship init bash)"
+
+source ~/.bash_completion/alacritty
