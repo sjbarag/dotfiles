@@ -46,6 +46,9 @@ symbol = "ruby "
 [rust]
 symbol = "rust "
 
+[terraform]
+symbol = "tf "
+
 [time]
 disabled = false
 use_12hr = true
