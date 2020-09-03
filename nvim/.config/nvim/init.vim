@@ -5,7 +5,6 @@ endfunction
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'kchmck/vim-coffee-script'
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'Shougo/echodoc.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tomasr/molokai'
@@ -14,9 +13,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh' }
+Plug 'Shougo/deoplete.nvim'
 Plug 'othree/yajs.vim'
 Plug 'tpope/vim-surround'
-Plug 'liuchengxu/space-vim-dark'
+Plug 'liuchengxu/space-vim-theme'
 Plug 'sjbarag/brightscript.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'freeo/vim-kalisi'
@@ -25,6 +25,8 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'jan-warchol/selenized', { 'rtp': 'vim/' }
 Plug 'srcery-colors/srcery-vim'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'editorconfig/editorconfig-vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -103,7 +105,12 @@ set mouse=
 set termguicolors
 
 " use a good lightline theme to match the color scheme
-let g:lightline = { 'colorscheme': 'srcery' }
+let g:lightline = { 'colorscheme': 'onehalfdark' }
+
+" let g:lightline = { 'colorscheme': 'challenger_deep' }
+
+" use terminal colors instead of getting it close with 256-color support
+" let g:challenger_deep_termcolors = 16
 
 " nord's default comments are way too light - brighten them up a bit
 " let g:nord_comment_brightness = 12
@@ -112,8 +119,8 @@ let g:lightline = { 'colorscheme': 'srcery' }
 " let ayucolor="dark"
 
 " use a good colorscheme
-set background=dark
-colorscheme srcery
+" set background=dark
+colorscheme onehalfdark
 
 " make comments italic
 highlight Comment cterm=italic
