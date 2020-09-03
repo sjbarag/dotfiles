@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm-color|*-256color|alacritty) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -96,7 +96,7 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$PATH:$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
 fi
 
-PATH="$PATH:$HOME/Library/Python/3.7/bin"
+PATH="$PATH:$HOME/Library/Python/3.8/bin"
 PATH="$PATH:$HOME/Library/Python/2.7/bin"
 
 # add Android SDK
@@ -118,7 +118,7 @@ PATH="${N_PREFIX}/bin:$PATH"
 
 # Add virtualenvwrapper functions to PATH
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source $HOME/Library/Python/3.7/bin/virtualenvwrapper.sh
+source $HOME/Library/Python/3.8/bin/virtualenvwrapper.sh
 
 # ensure JetBrains products can launch
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home'
