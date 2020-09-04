@@ -12,7 +12,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh' }
 Plug 'Shougo/deoplete.nvim'
 Plug 'othree/yajs.vim'
 Plug 'tpope/vim-surround'
@@ -45,8 +44,10 @@ set hidden
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'c': ['/usr/bin/clangd-10'],
-    \ 'typescript': ['~/.local/share/n/bin/tsserver']
+    \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'javascript': ['javascript-typescript-stdio']
     \ }
+
 
 " note that if you are using Plug mapping you should not use `noremap` mappings.
 nmap <F5> <Plug>(lcn-menu)
