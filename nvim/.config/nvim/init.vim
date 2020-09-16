@@ -101,6 +101,14 @@ inoremap <C-c>  <Esc>
 set mouse=
 " }}}
 
+" Filetypes {{{
+augroup filetypedetect
+    autocmd BufRead,BufNewFile *.msg set filetype=mail
+    autocmd BufRead,BufNewFile *.msg set tw=72
+    autocmd BufRead,BufNewFile *.msg set spell
+augroup END
+" }}}
+
 " Styling {{{
 " use true colors in terminal
 set termguicolors
