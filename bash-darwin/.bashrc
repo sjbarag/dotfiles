@@ -85,40 +85,55 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ] && source $(brew --prefix)/etc/profile.d/bash_completion.sh
+BREW_PREFIX=$(brew --prefix)
+# install all bash completions, via https://docs.brew.sh/Shell-Completion#configuring-completions-in-bash
+if type brew &>/dev/null
+then
+  if [[ -r "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+  then
+    source "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${BREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
+fi
 
 # ensure --user-install'd gems are in PATH
 if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$PATH:$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
 fi
 
-PATH="$PATH:$HOME/Library/Python/3.8/bin"
+PATH="$PATH:$HOME/Library/Python/3.9/bin"
 PATH="$PATH:$HOME/Library/Python/2.7/bin"
-
-# add Android SDK
-asdk="$HOME/Library/Android/sdk"
-PATH="$asdk/tools/bin:$asdk/platform-tools:$asdk/tools:$PATH"
 
 # add cargo/rust/rustup
 PATH="$HOME/.cargo/bin:$PATH"
 
 # set a GOPATH for go dependencies & binaries to go to
-export GOPATH="$HOME/src/go"
+export GOPATH="$HOME"
 
 # and add golang binaries to PATH
 PATH="$PATH:$(go env GOPATH)/bin"
+
+# Add GNU tools (make and friends)
+PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
 # Add n (for nodejs version management)
 export N_PREFIX="$HOME/.local/share/n"
 PATH="${N_PREFIX}/bin:$PATH"
 
+source /usr/local/opt/asdf/libexec/asdf.sh
+
+# add nvm too, why not
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # Add virtualenvwrapper functions to PATH
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source $HOME/Library/Python/3.8/bin/virtualenvwrapper.sh
+source $HOME/Library/Python/3.9/bin/virtualenvwrapper.sh
 
 # ensure JetBrains products can launch
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home'
@@ -126,22 +141,18 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Ho
 # use NeoVim as much as possible
 export EDITOR=nvim
 
-# chruby seems simpler than rvm
-#source /usr/local/share/chruby/chruby.sh
-
 # work stuff!
 source ~/.config/bash/work.sh
-
-# let me cd to things in ~/src/ *magically*
-export CDPATH="${HOME}/src/"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Add yarn and yarn-installed binaries to PATH
 PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export PATH
+if [[ -z "$TMUX" ]]; then
+    export PATH
+fi
 
 eval "$(starship init bash)"
-
-source ~/.bash_completion/alacritty
+eval "$(zoxide init bash)"
+. "$HOME/.cargo/env"

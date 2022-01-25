@@ -16,7 +16,6 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'othree/yajs.vim'
 Plug 'tpope/vim-surround'
 Plug 'liuchengxu/space-vim-theme'
-Plug 'sjbarag/brightscript.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'freeo/vim-kalisi'
 Plug 'junegunn/goyo.vim'
@@ -27,10 +26,8 @@ Plug 'srcery-colors/srcery-vim'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'editorconfig/editorconfig-vim'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'theme-controller/thcon.vim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 " enable deoplete for autocompletion
@@ -39,22 +36,14 @@ let g:deoplete#enable_at_startup = 1
 " configure languageclient-nvim
 
 " Required for operations modifying multiple buffers like rename.
-set hidden
+" set hidden
 
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'c': ['/usr/bin/clangd-10'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'javascript': ['javascript-typescript-stdio']
-    \ }
-
-
-" note that if you are using Plug mapping you should not use `noremap` mappings.
-nmap <F5> <Plug>(lcn-menu)
-" Or map each action separately
-nmap <silent> gh <Plug>(lcn-hover)
-nmap <silent> gd <Plug>(lcn-definition)
-nmap <silent> <F2> <Plug>(lcn-rename)
+" " note that if you are using Plug mapping you should not use `noremap` mappings.
+" nmap <F5> <Plug>(lcn-menu)
+" " Or map each action separately
+" nmap <silent> gh <Plug>(lcn-hover)
+" nmap <silent> gd <Plug>(lcn-definition)
+" nmap <silent> <F2> <Plug>(lcn-rename)
 
 "}}}
 
@@ -130,6 +119,9 @@ let g:lightline = { 'colorscheme': 'onehalfdark' }
 " use a good colorscheme
 " set background=dark
 colorscheme onehalfdark
+
+call thcon#load()
+call thcon#listen()
 
 " make comments italic
 highlight Comment cterm=italic

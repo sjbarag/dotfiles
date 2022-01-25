@@ -1,6 +1,7 @@
 # Replace the "❯" symbol in the prompt with "$"
 [character]
-symbol = "$"
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
 
 [aws]
 disabled = true
@@ -22,10 +23,19 @@ disabled = true
 fish_style_pwd_dir_length = 1
 truncate_to_repo = false
 
+[gcloud]
+symbol = "gcloud "
+
 [git_branch]
 symbol = "branch "
 
 [git_status]
+disabled = true
+
+[golang]
+symbol = "go "
+
+[hg_branch]
 disabled = true
 
 [java]
@@ -46,13 +56,17 @@ symbol = "ruby "
 [rust]
 symbol = "rust "
 
+[shlvl]
+symbol = "^"
+disabled = false
+
 [terraform]
 symbol = "tf "
 
 [time]
 disabled = false
 use_12hr = true
-style = "#ffffff"
+#style = "#ffffff"
 
 [username]
 show_always = true
