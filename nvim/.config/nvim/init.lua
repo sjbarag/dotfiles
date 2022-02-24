@@ -1,0 +1,6 @@
+vim.lsp.set_log_level("debug")
+require('sjbarag.plugins')
+require('sjbarag.completion')
+require('sjbarag.lspconfig')
+require('sjbarag.settings')
+require('sjbarag.appearance')
