@@ -32,5 +32,8 @@ vim.cmd([[
     autocmd BufRead,BufNewFile *.msg set filetype=mail
     autocmd BufRead,BufNewFile *.msg set tw=72
     autocmd BufRead,BufNewFile *.msg set spell
+
+    " always enable spell-checking in commit messages
+    autocmd FileType gitcommit set spell
   augroup END
 ]])

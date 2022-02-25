@@ -29,6 +29,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'svermeulen/vimpeccable' -- vimscript map command sugar
+  use 'mfussenegger/nvim-lint' -- shell out to linters
 
   -- themes
   use 'itchyny/lightline.vim'
