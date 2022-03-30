@@ -1,5 +1,4 @@
 require('lint').linters_by_ft = {
-  go = { 'golangclilint' },
   javascript = { 'eslint' },
   javascriptreact = { 'eslint' },
   typescript = { 'eslint' },
