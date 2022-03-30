@@ -35,5 +35,8 @@ vim.cmd([[
 
     " always enable spell-checking in commit messages
     autocmd FileType gitcommit set spell
+
+    " use tabs instead of spaces for go
+    autocmd FileType go set noexpandtab tabstop=8 shiftwidth=0
   augroup END
 ]])
