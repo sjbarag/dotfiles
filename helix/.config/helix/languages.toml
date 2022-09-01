@@ -1,0 +1,9 @@
+[[language]]
+name = "email"
+scope = "text.email"
+file-types = ["eml", "mbox"]
+roots = []
+indent = { tab-width = 4, unit = "    " }
+comment-token = ">"
+rulers = [ 80 ]
+auto-format = false

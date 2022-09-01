@@ -1,0 +1,20 @@
+theme = "ingrid"
+
+[editor]
+true-color = true
+cursorline = true
+color-modes = true
+rulers = [ 80, 100, 120 ]
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+nbsp = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+nbsp = "⍽"
+tab = "→"
+
+[editor.indent-guides]
+render = true
