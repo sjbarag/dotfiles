@@ -149,6 +149,8 @@ source ~/.config/bash/work.sh
 # Add yarn and yarn-installed binaries to PATH
 PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+export BAT_THEME=ansi
+
 if [[ -z "$TMUX" ]]; then
     export PATH
 fi
