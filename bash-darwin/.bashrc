@@ -105,7 +105,7 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$PATH:$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
 fi
 
-PATH="$PATH:$HOME/Library/Python/3.9/bin"
+PATH="$PATH:$HOME/Library/Python/3.10/bin"
 PATH="$PATH:$HOME/Library/Python/2.7/bin"
 
 # add cargo/rust/rustup
@@ -133,7 +133,7 @@ source /usr/local/opt/asdf/libexec/asdf.sh
 
 # Add virtualenvwrapper functions to PATH
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source $HOME/Library/Python/3.9/bin/virtualenvwrapper.sh
+source $HOME/Library/Python/3.10/bin/virtualenvwrapper.sh
 
 # ensure JetBrains products can launch
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home'
