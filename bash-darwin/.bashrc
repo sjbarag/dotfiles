@@ -158,3 +158,11 @@ fi
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 . "$HOME/.cargo/env"
+
+# use us-west for CockroachDB GCE dev instances
+export CLOUDSDK_COMPUTE_ZONE=us-west1-b
+
+# pnpm
+export PNPM_HOME="/Users/barag/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
