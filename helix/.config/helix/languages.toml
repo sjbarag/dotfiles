@@ -5,5 +5,5 @@ file-types = ["eml", "mbox"]
 roots = []
 indent = { tab-width = 4, unit = "    " }
 comment-token = ">"
-rulers = [ 80 ]
+rulers = [72]
 auto-format = false
