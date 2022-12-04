@@ -85,6 +85,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+[ -x /opt/homebrew/bin/brew ] && PATH="/opt/homebrew/bin:${PATH}"
 BREW_PREFIX=$(brew --prefix)
 # install all bash completions, via https://docs.brew.sh/Shell-Completion#configuring-completions-in-bash
 if type brew &>/dev/null
@@ -142,7 +143,7 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Ho
 export EDITOR=nvim
 
 # work stuff!
-source ~/.config/bash/work.sh
+[ -f ~/.config/bash/work.sh ] && source ~/.config/bash/work.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
