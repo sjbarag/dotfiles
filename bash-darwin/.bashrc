@@ -145,6 +145,8 @@ export EDITOR=nvim
 # work stuff!
 [ -f ~/.config/bash/work.sh ] && source ~/.config/bash/work.sh
 
+command -v fd > /dev/null
+[ $? ] && export FZF_DEFAULT_COMMAND="fd --type f"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Add yarn and yarn-installed binaries to PATH
