@@ -10,11 +10,15 @@ disabled = true
 [[battery.display]] 
 threshold = 10
 style = "bold red"
+discharging_symbol = "↓!"
+charging_symbol = "↑"
 
 # "bold yellow" style when capacity is between 10% and 30%
 [[battery.display]]
 threshold = 30
 style = "bold yellow"
+discharging_symbol = "↓"
+charging_symbol = "↑"
 
 [dotnet]
 disabled = true
@@ -70,3 +74,6 @@ use_12hr = true
 
 [username]
 show_always = true
+
+[zig]
+symbol = "zig "
