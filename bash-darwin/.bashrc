@@ -101,14 +101,6 @@ then
   fi
 fi
 
-# ensure --user-install'd gems are in PATH
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$PATH:$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
-fi
-
-PATH="$PATH:$HOME/Library/Python/3.10/bin"
-PATH="$PATH:$HOME/Library/Python/2.7/bin"
-
 # add cargo/rust/rustup
 PATH="$HOME/.cargo/bin:$PATH"
 
@@ -118,29 +110,12 @@ export GOPATH="$HOME"
 # and add golang binaries to PATH
 PATH="$PATH:$(go env GOPATH)/bin"
 
-# Add GNU tools (make and friends)
-PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-
 # Add n (for nodejs version management)
 export N_PREFIX="$HOME/.local/share/n"
 PATH="${N_PREFIX}/bin:$PATH"
 
-source /usr/local/opt/asdf/libexec/asdf.sh
-
-# add nvm too, why not
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# Add virtualenvwrapper functions to PATH
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source $HOME/Library/Python/3.10/bin/virtualenvwrapper.sh
-
-# ensure JetBrains products can launch
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home'
-
-# use NeoVim as much as possible
-export EDITOR=nvim
+# use helix as much as possible
+export EDITOR=hx
 
 # work stuff!
 [ -f ~/.config/bash/work.sh ] && source ~/.config/bash/work.sh
@@ -160,12 +135,12 @@ fi
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
-. "$HOME/.cargo/env"
-
-# use us-west for CockroachDB GCE dev instances
-export CLOUDSDK_COMPUTE_ZONE=us-west1-b
+[ -r "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/Users/barag/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
