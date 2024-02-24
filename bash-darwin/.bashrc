@@ -101,6 +101,9 @@ then
   fi
 fi
 
+# add llvm tools
+PATH="$BREW_PREFIX/opt/llvm/bin:$PATH"
+
 # add cargo/rust/rustup
 PATH="$HOME/.cargo/bin:$PATH"
 
