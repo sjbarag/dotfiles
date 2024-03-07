@@ -26,6 +26,7 @@ disabled = true
 [directory]
 fish_style_pwd_dir_length = 1
 truncate_to_repo = false
+format = "in [$path]($style)[$read_only]($read_only_style) "
 
 [gcloud]
 symbol = "gcloud "
@@ -42,6 +43,10 @@ symbol = "go "
 [hg_branch]
 disabled = true
 
+[hostname]
+ssh_symbol = "on"
+format = "$ssh_symbol [$hostname]($style) "
+
 [java]
 disabled = true
 
@@ -50,6 +55,9 @@ symbol = "node "
 
 [package]
 disabled = true
+
+[perl]
+symbol = "perl "
 
 [python]
 symbol = "python "
@@ -74,6 +82,7 @@ use_12hr = true
 
 [username]
 show_always = true
+format = "[$user]($style) "
 
 [zig]
 symbol = "zig "
