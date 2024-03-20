@@ -128,7 +128,9 @@ if [ $? ]; then
   export FZF_DEFAULT_COMMAND="fd --type f"
   export FZF_CTRL_T_COMMAND="fd"
 fi
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if command -v fzf > /dev/null; then
+  eval "$(fzf --bash)"
+fi
 
 # Add yarn and yarn-installed binaries to PATH
 PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
