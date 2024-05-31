@@ -72,6 +72,9 @@ symbol = "rust "
 symbol = "^"
 disabled = false
 
+[swift]
+symbol = "swift "
+
 [terraform]
 symbol = "tf "
 
