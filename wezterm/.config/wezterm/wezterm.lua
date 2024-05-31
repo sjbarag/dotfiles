@@ -36,4 +36,7 @@ config.window_decorations = "RESIZE"
 -- Use the more advanced wezterm terminfo defs
 config.term = 'wezterm'
 
+-- Disable the terminal bell. No beep pls.
+config.audible_bell = "Disabled"
+
 return config
