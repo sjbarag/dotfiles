@@ -33,6 +33,11 @@ config.enable_tab_bar = false
 -- around.
 config.window_decorations = "RESIZE"
 
+-- Add tmux pane separator to keep it out of the double-click selection.
+config.selection_word_boundary = " \t\n{}[]()\"'`│"
+-- default value:                 ~~~~~~~~~~~~~~~
+-- tmux pane separator:                          ~
+
 -- Use the more advanced wezterm terminfo defs
 config.term = 'wezterm'
 
