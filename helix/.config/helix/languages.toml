@@ -45,4 +45,10 @@ name = "tsx"
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 language-servers = [ "typescript-language-server", "vscode-eslint-language-server" ]
 auto-format = true
+
+[[language]]
+name = "jsx"
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+language-servers = [ "typescript-language-server", "vscode-eslint-language-server" ]
+auto-format = true
 # END: Prettier formatter config
