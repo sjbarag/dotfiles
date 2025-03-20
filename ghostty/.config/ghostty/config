@@ -12,3 +12,4 @@ macos-option-as-alt = left
 
 #keybind=ctrl+shift+space=toggle_hyperlink_hints
 keybind = cmd+enter=ignore
+keybind = shift+enter=ignore
