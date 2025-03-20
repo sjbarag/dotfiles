@@ -6,6 +6,7 @@ macos-titlebar-style = hidden
 window-inherit-font-size = false
 font-family = Berkeley Mono Regular
 font-size = 15
+font-feature = -calt
 theme = light:rose-pine-dawn, dark:rose-pine
 selection-invert-fg-bg = true
 macos-option-as-alt = left
