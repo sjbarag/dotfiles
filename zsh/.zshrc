@@ -9,7 +9,7 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^x^e" edit-command-line
 
-path=("$HOME/.cargo/bin" $path)
+path=("$HOME/.cargo/bin" "$HOME/.atuin/bin/" $path)
 
 # Disable a few beeps, but allow 'tput bel' to beep on-demand.
 setopt NO_BEEP
