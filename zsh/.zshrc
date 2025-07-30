@@ -38,10 +38,14 @@ command -v mise > /dev/null && eval "$(mise activate zsh)"
 
 [[ -r ~/.config/zsh/work.sh ]] && source ~/.config/zsh/work.sh
 
+FD_COMMAND=fdfind
+if [[ $(uname) = "Darwin" ]]; then
+  FD_COMMAND=fd
+fi
 # Bootstrap fzf+zsh shell integration, using fd for file discover.
 if command -v fzf > /dev/null; then
-  export FZF_DEFAULT_COMMAND="fd --type f"
-  export FZF_CTRL_T_COMMAND="fd"
+  export FZF_DEFAULT_COMMAND="$FD_COMMAND --type f"
+  export FZF_CTRL_T_COMMAND="FD_COMMAND"
   source <(fzf --zsh)
 fi
 
