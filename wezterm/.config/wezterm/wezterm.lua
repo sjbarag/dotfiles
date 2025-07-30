@@ -15,14 +15,16 @@ end
 
 function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
-    return 'rose-pine'
+    return 'Breeze'
+    -- return 'rose-pine'
   else
+    -- return 'Breeze Light'
     return 'rose-pine-dawn'
   end
 end
 config.color_scheme = scheme_for_appearance(get_appearance())
 
-config.font = wezterm.font 'Iosevka Fixed SS04'
+config.font = wezterm.font 'Berkeley Mono'
 config.font_size = 15.0
 
 -- Hide the tab bar.
@@ -42,6 +44,6 @@ config.selection_word_boundary = " \t\n{}[]()\"'`│"
 config.term = 'wezterm'
 
 -- Disable the terminal bell. No beep pls.
-config.audible_bell = "Disabled"
+-- config.audible_bell = "Disabled"
 
 return config

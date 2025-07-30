@@ -38,12 +38,14 @@ auto-format = true
 name = "typescript"
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 language-servers = [ "typescript-language-server", "vscode-eslint-language-server" ]
+roots = ["package.json"]
 auto-format = true
 
 [[language]]
 name = "tsx"
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 language-servers = [ "typescript-language-server", "vscode-eslint-language-server" ]
+roots = ["package.json"]
 auto-format = true
 
 [[language]]
@@ -52,3 +54,12 @@ formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 language-servers = [ "typescript-language-server", "vscode-eslint-language-server" ]
 auto-format = true
 # END: Prettier formatter config
+
+[language-server.typescript-language-server]
+command = "vtsls"
+
+[language-server.typescript-language-server.config]
+typescript.tsserver.maxTsServerMemory = 8192
+typescript.tsserver.log = "terse"
+tsserver.useLocalTsdk = true
+

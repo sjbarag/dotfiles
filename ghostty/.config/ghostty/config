@@ -4,10 +4,10 @@ shell-integration-features = no-cursor
 macos-titlebar-style = hidden
 
 window-inherit-font-size = false
-font-family = Berkeley Mono Regular
+font-family = Berkeley Mono
 font-size = 15
 font-feature = -calt
-theme = light:rose-pine-dawn, dark:rose-pine
+theme = light:breeze light, dark: breeze
 selection-invert-fg-bg = true
 macos-option-as-alt = left
 
